@@ -26,9 +26,9 @@ module.exports = exports = function(webot){
     },
     handler: function(info){
       var reply = {
-        title: '感谢你收听webot机器人',
-        pic: 'https://raw.github.com/node-webot/webot-example/master/qrcode.jpg',
-        url: 'https://github.com/node-webot/webot-example',
+        title: 'laystall.top',
+        pic: 'http://pariah.cn',
+        url: 'http://pariah.cn',
         description: [
           '你可以试试以下指令:',
             'game : 玩玩猜数字的游戏吧',
@@ -37,7 +37,7 @@ module.exports = exports = function(webot){
             '使用「位置」发送你的经纬度',
             '重看本指令请回复help或问号',
             '更多指令请回复more',
-            'PS: 点击下面的「查看全文」将跳转到我的github页'
+            'PS: 点击下面的「查看全文」'
         ].join('\n')
       };
       // 返回值如果是list，则回复图文消息列表
@@ -361,9 +361,7 @@ module.exports = exports = function(webot){
     pattern: /^news\s*(\d*)$/,
     handler: function(info){
       var reply = [
-        {title: '微信机器人', description: '微信机器人测试帐号：webot', pic: 'https://raw.github.com/node-webot/webot-example/master/qrcode.jpg', url: 'https://github.com/node-webot/webot-example'},
-        {title: '豆瓣同城微信帐号', description: '豆瓣同城微信帐号二维码：douban-event', pic: 'http://i.imgur.com/ijE19.jpg', url: 'https://github.com/node-webot/weixin-robot'},
-        {title: '图文消息3', description: '图文消息描述3', pic: 'https://raw.github.com/node-webot/webot-example/master/qrcode.jpg', url: 'http://www.baidu.com'}
+        {title: '百度', description: '百度', pic: 'https://raw.github.com/node-webot/webot-example/master/qrcode.jpg', url: 'http://www.baidu.com'}
       ];
       // 发送 "news 1" 时只回复一条图文消息
       return Number(info.param[1]) == 1 ? reply[0] : reply;
