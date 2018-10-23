@@ -8,6 +8,7 @@ var error = debug('webot-example:error');
 var _ = require('underscore')._;
 var search = require('../lib/support').search;
 var geo2loc = require('../lib/support').geo2loc;
+var tuling123 = require('../lib/support').tuling123;
 
 var package_info = require('../package.json');
 
@@ -373,6 +374,21 @@ module.exports = exports = function(webot){
     //item.title = (index+1) + '> ' + item.title;
     return item;
   };
+
+  function tuling(info, next){
+      // pattern的解析结果将放在param里
+      var q = info.text
+      log('searching: ', q);
+      // 从某个地方搜索到数据...
+      return tuling123(q,next);
+  }
+
+  webot.set('search', {
+      description: '图灵',
+      pattern: /.*/,
+      //handler也可以是异步的
+      handler: tuling
+  });
 
   //所有消息都无法匹配时的fallback
   webot.set(/.*/, function(info){
